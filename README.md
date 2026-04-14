@@ -39,6 +39,47 @@ This hackathon brings together developers, architects, and domain experts to add
 - Present and demonstrate their solutions
 
 
+## Contributing
+
+### Creating Issues
+
+- Use GitHub Issues to report bugs, request features, or discuss ideas.
+- Provide a clear and descriptive title.
+- Include detailed description, steps to reproduce (for bugs), expected vs actual behavior.
+- Assign appropriate labels and assign to yourself if you're working on it.
+
+### Branch Naming
+
+- Use descriptive branch names linked to issues: `feature/issue-123-description` or `bugfix/issue-456-fix`
+- Prefix with `feature/`, `bugfix/`, `docs/`, etc.
+- Keep names lowercase with hyphens.
+
+
+### Folder Structure
+
+- Stick to your assigned challenge folder (e.g., `01-access-data-compute/`) for all changes.
+- Do not modify files outside your challenge area unless explicitly coordinated.
+- Create subfolders as needed within your challenge directory.
+
+### Pull Requests
+
+- Create PRs from your feature branch to main or your challenge branch.
+- Reference the issue number in the PR description.
+- Ensure any CI passes and code is reviewed.
+
+### AI Coding Agents
+
+- AI coding assistants (like GitHub Copilot, Claude, etc.) are encouraged for accelerating development and exploring solutions
+- All code changes must undergo human review before merging
+- PRs that are primarily AI-generated should be clearly marked in the description
+
+### Testing
+
+- Include appropriate tests for new functionality (unit tests, integration tests, etc.)
+- Test your changes in the relevant challenge environment before submitting
+- Ensure all tests pass and consider edge cases
+- Document any manual testing steps if automated tests are not feasible
+
 ## License
 
 This project is licensed under the Apache License - see the [LICENSE](./LICENSE) file for details.
