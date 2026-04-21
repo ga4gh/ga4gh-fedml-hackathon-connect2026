@@ -1,0 +1,369 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  background: #f5f5f5;
+  color: #222;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  height: 52px;
+  background: #1a1a2e;
+  color: #fff;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.app-title {
+  font-weight: 600;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.server-config {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.server-label {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.server-url {
+  font-size: 12px;
+  color: #90caf9;
+}
+
+.server-form {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.server-input {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: #2a2a3e;
+  color: #fff;
+  font-size: 12px;
+  width: 240px;
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────────────────── */
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.workspace-list {
+  list-style: none;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.workspace-item {
+  display: flex;
+  align-items: stretch;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+.workspace-item.active {
+  border-color: #1976d2;
+  background: #e3f2fd;
+}
+
+.workspace-select-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.workspace-select-btn:hover {
+  background: #f0f4ff;
+}
+
+.workspace-item.active .workspace-select-btn {
+  background: transparent;
+}
+
+.workspace-name {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.workspace-count {
+  font-size: 11px;
+  color: #888;
+}
+
+.workspace-delete-btn {
+  border-radius: 0 !important;
+  padding: 0 8px !important;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Main content ────────────────────────────────────────────────────────── */
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.no-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #888;
+}
+
+.workspace-view {
+  max-width: 860px;
+}
+
+/* ── Add URI form ────────────────────────────────────────────────────────── */
+
+.add-uri-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.add-uri-input-group {
+  flex: 1;
+}
+
+.uri-input {
+  flex: 1;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: monospace;
+}
+
+.uri-input:focus {
+  outline: none;
+  border-color: #1976d2;
+}
+
+.uri-input.input-error {
+  border-color: #e53935;
+}
+
+.form-error {
+  color: #e53935;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.form-hint {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+/* ── URI list ────────────────────────────────────────────────────────────── */
+
+.uri-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.uri-row {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.uri-row-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.uri-text {
+  flex: 1;
+  font-size: 12px;
+  word-break: break-all;
+  color: #333;
+}
+
+.uri-invalid {
+  color: #e53935;
+}
+
+.uri-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.uri-parse-error {
+  font-size: 12px;
+  color: #e53935;
+  margin-top: 6px;
+}
+
+.resolution-result {
+  margin-top: 10px;
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 12px;
+  overflow-x: auto;
+  white-space: pre;
+  color: #333;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.resolution-error {
+  margin-top: 8px;
+  color: #e53935;
+  font-size: 12px;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #1976d2;
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #1565c0;
+}
+
+.btn-resolve {
+  background: #2e7d32;
+  color: #fff;
+}
+
+.btn-resolve:hover:not(:disabled) {
+  background: #1b5e20;
+}
+
+.btn-danger {
+  background: #fde8e8;
+  color: #c62828;
+  border-color: #f5c6c6;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #f5c6c6;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #555;
+  border-color: #ccc;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+.btn-sm {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ── Misc ────────────────────────────────────────────────────────────────── */
+
+.empty-state {
+  color: #888;
+  font-size: 13px;
+  padding: 12px 0;
+}
+
+.sidebar-empty {
+  padding: 8px 2px;
+}
